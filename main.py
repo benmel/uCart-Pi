@@ -20,9 +20,11 @@ try:
       while True:
         try:
           text = raw_input()
-          logger.info("Sending text: %s", text)
-          text += '\n'
-          client_sock.send(text)
+          text_strip = text.strip()
+          if text_strip:
+            logger.info("Sending text: %s", text_strip)
+            text_strip += '\n'
+            client_sock.send(text_strip)
         except IOError:
           logger.error("IOError")
           pass
