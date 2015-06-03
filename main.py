@@ -27,7 +27,7 @@ try:
             client_sock.send(text_strip)
         except IOError:
           logger.error("IOError")
-          pass
+          break
     except KeyboardInterrupt:    
       logger.info("Disconnected")
       client_sock.close()
