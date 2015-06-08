@@ -9,4 +9,9 @@ This application runs on a Raspberry Pi. It sends data from a barcode scanner an
   cd /home/pi/uCart-Pi
   python main.py
   ```
-3. Reboot
+3. Run `sudo crontab -e` and add:
+
+  ```
+  * * * * * /usr/sbin/hciconfig hci0 piscan
+  ```
+4. Reboot
